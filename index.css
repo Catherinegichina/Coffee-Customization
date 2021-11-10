@@ -1,0 +1,302 @@
+
+nav{
+    /* background-color:#BD9168; */
+    height: 60px;
+}
+ul{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    padding: 20px;
+    list-style: none;
+}
+ul li a {
+    color: black;
+    text-decoration: none;
+}
+h1{
+    color:black;
+}
+.description{
+    align-items: center;
+    color:black;
+    margin-right:50%;
+    position: relative;
+    bottom: 190;
+    position: relative;
+    position: fixed;
+}
+.image1{
+    display: block;
+    margin-left: 60%;
+    margin-right: 50%;
+    width: -50%;
+    height: 300px; 
+}
+.box{
+    border:3px;
+     border-style:solid; 
+     border-color:black; 
+     background-color:#BD9168;
+}
+
+/* right code starts here */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    box-sizing: border-box;
+    text-align: center;
+}
+body{
+    /* background-color:rgb(53, 10, 17); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    /* background: black; */
+    font-family: sans-serif;
+}
+.main{
+    width: 60%;    
+    margin: 24% auto;
+    position: relative;
+}
+#slider{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    outline: none;
+    border-radius: 3px;
+}
+#slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+}
+#selector{
+    height: 104px;
+    width: 48px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.SelectBtn{
+    height: 48px;
+    width: 48px;
+    background-size: cover;
+    background-image: url(images/coffee.jpeg);
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+#SelectValue{
+    width: 48px;
+    height: 40px;
+    position: absolute;
+    top:0;
+    background:#ffd200;
+    border-radius: 4px;
+    text-align: center;
+    line-height:45px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#SelectValue::after{
+    content:'';
+    border-top: 17px solid #ffd200;
+    border-left: 24px solid #000000;
+    border-right: 24px solid #000;
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+}
+#ProgressBar{
+    width: 50%;
+    height: 7px;
+    background: #ffd200;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* ends here */
+
+/* button starts here */
+button{
+    position: relative;
+    height: 60px;
+    width: 200px;
+    margin: 0 35px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 2%;
+
+  }
+  button:first-child:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+  }
+  button:last-child:hover{
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+    background-size: 400%;
+  }
+  button:first-child:before,
+  button:last-child:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  button:first-child:hover:before,
+  button:last-child:hover:before{
+    opacity: 1;
+    z-index: -1;
+  }
+  button:hover{
+    z-index: 1;
+    animation: glow 8s linear infinite;
+  }
+  @keyframes glow {
+    0%{
+      background-position: 0%;
+    }
+    100%{
+      background-position: 400%;
+    }
+  }
+
+  /* the slider code css starts here */
+  .range{
+    height: 80px;
+    width: 380px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0 65px 0 45px;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+
+    display: block;
+    margin-left: 60%;
+    margin-right: 50%;
+    width: -50%;
+    height: 300px; 
+  }
+  p{ 
+    align-items: center;
+    color:whitesmoke;
+    margin-right:50%;
+    position: relative;
+    bottom: 190;
+    position: relative;
+    position: fixed;
+  }
+  .sliderValue{
+    position: relative;
+    width: 100%;
+  }
+  .sliderValue span{
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    transform: translateX(-70%) scale(0);
+    font-weight: 500;
+    top: -40px;
+    line-height: 55px;
+    z-index: 2;
+    color: #fff;
+    transform-origin: bottom;
+    transition: transform 0.3s ease-in-out;
+  }
+  .sliderValue span.show{
+    transform: translateX(-70%) scale(1);
+  }
+  .sliderValue span:after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: #664AFF;
+    border: 3px solid #fff;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border-bottom-left-radius: 50%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  .field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+  }
+  .field .value{
+    position: absolute;
+    font-size: 18px;
+    color: #664AFF;
+    font-weight: 600;
+  }
+  .field .value.left{
+    left: -22px;
+  }
+  .field .value.right{
+    right: -43px;
+  }
+  .range input{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    z-index: 2222;
+  }
+  .range input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    background: #664AFF;
+    border: 1px solid #664AFF;
+    cursor: pointer;
+  }
+  .range input::-moz-range-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    background: #664AFF;
+    border: 1px solid #664AFF;
+    cursor: pointer;
+  }
+  .range input::-moz-range-progress{
+    background: #664AFF; 
+  }
+  /* the slider code css starts here */
